@@ -5,8 +5,8 @@ const CLOUD_X = 100;
 const CLOUD_Y = 10;
 const GAP = 10;
 const TEXT_WIDTH = 50;
-let barHeight = CLOUD_HEIGHT - GAP - TEXT_WIDTH * 2 - GAP;
 const BAR_WIDTH = 40;
+let barHeight = CLOUD_HEIGHT - GAP - TEXT_WIDTH * 2 - GAP;
 
 let renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -57,6 +57,7 @@ window.renderStatistics = function (ctx, names, times) {
       CLOUD_Y + GAP * 4
   );
 
+
   let maxTime = getMaxElement(times);
 
   for (let i = 0; i < names.length; i++) {
@@ -65,7 +66,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === `Вы`) {
       ctx.fillStyle = `rgba(255, 0, 0, 1)`;
     } else {
-      ctx.fillStyle = `hsl(120, 100%, 20%)`;
+      ctx.fillStyle = 'hsl(240, ' + Math.floor(Math.random() * 100) + '%, 27%)';
     }
 
 
